@@ -30,3 +30,10 @@ void coin::draw() {
 	ofDrawCircle(pos.x, pos.y, size);
 }
 
+void coin::pickUp() {
+	printf("gotcha");
+}
+
+coin::coin() {
+	init();
+}

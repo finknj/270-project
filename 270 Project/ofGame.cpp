@@ -4,6 +4,7 @@ using namespace game;
 
 // General configuration
 int GameConfig::FRAME_RATE = 60;
+int GameConfig::COINS_COLLECTED = 0;
 
 // Player configurations
 float GameConfig::PLAYER_INITIAL_ACCEL = 1000.0f;
@@ -17,10 +18,13 @@ float GameConfig::PLAYER_INITIAL_SPEED = 500.0f;
 
 		player = new Player();
 
+		Coin = new coin();
 	}
 	
 	void ofGame::update() {
 		float currentTime = ofGetElapsedTimef();
+
+		//distanceTo();
 
 		player->update(currentTime, previousTime);
 
@@ -31,6 +35,10 @@ float GameConfig::PLAYER_INITIAL_SPEED = 500.0f;
 		float currentTime = ofGetElapsedTimef();
 
 		player->draw(currentTime, previousTime);
+
+		Coin->draw();
+
+		ofDrawBitmapString("Score: " + ofToString(GameConfig::COINS_COLLECTED), 1500, 50);
 	}
 
 
@@ -67,4 +75,12 @@ float GameConfig::PLAYER_INITIAL_SPEED = 500.0f;
 			player->handleMovementKeyReleased(Player::DOWN);
 			break;
 		}
+	}
+
+	void distanceTo() {
+		
+
+
+		//printf(" %g, %g", p1.x, p1.y);
+
 	}

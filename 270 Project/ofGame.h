@@ -1,6 +1,7 @@
 #pragma once
 #include "ofMain.h"
 #include "Player.h"
+#include "coin.h"
 
 namespace game{
 
@@ -16,11 +17,12 @@ public:
 	void keyPressed(int key);
 	void keyReleased(int key);
 
+	void distanceTo();
 
 private:
 	float previousTime;
 	Player* player;
-
+	coin* Coin;
 	
 
 };

@@ -143,9 +143,6 @@ void Player::stopHorizontalMovement() {
 	acceleration.x = 0;
 }
 
-void Player::move() {
-	
-}
 
 
 bool Player::checkSpace() {

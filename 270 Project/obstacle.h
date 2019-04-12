@@ -21,8 +21,19 @@ namespace game {
 
 
 	public:
+		
+		// Update physics method
+		virtual void update(float timeNow, float timeBefore) {};
+
+		// Drawing method
+		virtual void draw(float timeNow, float timeBefore) {};
+		
 		void setColor(int r, int g, int b);
 
+
+		// Getter and setter
+		void setPosition(ofVec2f position);
+		ofVec2f getPosition();
 	};
 
 }

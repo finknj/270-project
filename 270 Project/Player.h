@@ -16,7 +16,6 @@ namespace game {
 		//Sets initial values for player
 		void init();
 		
-		void move();
 		bool checkSpace();
 		void collectCoin();
 		void die();
