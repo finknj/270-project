@@ -33,7 +33,7 @@ void Player::handleMovementKeyPressed(MovementDirection direction) {
 		if (!isUpKeyPressed) {
 			startMovingUp();
 			isUpKeyPressed = true;
-			printf("up");
+			printf("up");		//registers key press and release
 		}
 		break;
 	case DOWN:
@@ -116,6 +116,9 @@ void Player::handleMovementKeyReleased(MovementDirection direction) {
 void Player::startMovingUp() {
 	velocity.y = -GameConfig::PLAYER_INITIAL_SPEED;
 	acceleration.y = -GameConfig::PLAYER_INITIAL_ACCEL;
+	printf("%g ", velocity.y);			//returning -500 -1000 for values but still not moving?
+	printf("%g ", acceleration.y);
+
 }
 
 void Player::startMovingDown() {
@@ -161,10 +164,6 @@ void Player::die() {
 
 }
 
-//void Player::draw() {
-//	ofSetColor(red, green, blue);
-//	ofDrawCircle(pos.x, pos.y, 0, size);
-//}
 
 void Player::update(float timeNow, float timeBefore) {
 	updatePosition(timeNow - timeBefore);
@@ -176,7 +175,24 @@ void Player::updateVelocity(float dt) {
 
 void Player::updatePosition(float dt) {
 	updateVelocity(dt);
-	position += velocity; 
+	
+	ofVec2f delta = velocity * dt;
+
+	if (position.x + delta.x + size >= ofGetWidth()) {
+		delta.x = 0;
+	}
+	else if (position.x + delta.x - size <= 0) {
+		delta.x = 0;
+	}
+
+	if (position.y + delta.y + size >= ofGetHeight()) {
+		delta.y = 0;
+	}
+	else if (position.y + delta.y - size <= 0) {
+		delta.y = 0;
+	}
+
+	position += delta;
 }
 
 Player::Player() {

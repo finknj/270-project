@@ -19,7 +19,6 @@ namespace game {
 		bool checkSpace();
 		void collectCoin();
 		void die();
-		//void draw();
 		
 		//updates physics
 		void update(float timeNow, float timeBefore);
