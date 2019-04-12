@@ -1,5 +1,7 @@
 #include "coin.h"
 
+using namespace game;
+
 void coin::init() {
 	setColor(244, 232, 104);
 	// size for coin is actually a radius but hey who really feels like adding another variable
@@ -28,12 +30,3 @@ void coin::draw() {
 	ofDrawCircle(pos.x, pos.y, size);
 }
 
-
-coin::coin()
-{
-}
-
-
-coin::~coin()
-{
-}

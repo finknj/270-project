@@ -1,15 +1,28 @@
 #pragma once
-#include "base.h"
+#include "ofVec2f.h"
+#include "ofMain.h"
 
-class obstacle : public base
-{
-protected:
-	int width;
-	int height;
+//removed base.h in order to seperate entities from obstacles 
 
-public:
-	
-	obstacle();
-	~obstacle();
-};
+namespace game {
 
+	class obstacle
+	{
+	protected:
+		int width;
+		int height;
+
+		ofVec2f pos;
+
+		int green;
+		int red;
+		int blue;
+		int size;
+
+
+	public:
+		void setColor(int r, int g, int b);
+
+	};
+
+}

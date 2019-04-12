@@ -15,6 +15,7 @@ namespace game {
 
 		//Sets initial values for player
 		void init();
+		
 		void move();
 		bool checkSpace();
 		void collectCoin();
@@ -34,7 +35,7 @@ namespace game {
 		void handleMovementKeyReleased(MovementDirection direction);
 
 	private:
-		ofVec2f position;
+		ofVec2f pos;
 		ofVec2f velocity;
 		ofVec2f acceleration;
 

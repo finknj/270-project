@@ -1,15 +1,16 @@
 #pragma once
-#include "base.h"
+#include "obstacle.h"
 
-class coin : public base
-{
-public:
-	void init();
-	void update();
-	bool checkSpace();
-	void draw();
+namespace game {
 
-	coin();
-	~coin();
-};
+	class coin : public obstacle
+	{
+	public:
+		void init();
+		void update();
+		bool checkSpace();
+		void draw();
 
+	};
+
+}

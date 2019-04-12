@@ -1,5 +1,7 @@
 #include "Enemy.h"
 
+using namespace game;
+
 void Enemy::init() {
 	setColor(255, 0, 0);
 	size = 50;
@@ -30,11 +32,3 @@ void Enemy::draw() {
 	ofDrawBox(pos.x, pos.y, 0, size);
 }
 
-Enemy::Enemy()
-{
-}
-
-
-Enemy::~Enemy()
-{
-}

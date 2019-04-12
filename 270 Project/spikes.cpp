@@ -1,12 +1,4 @@
 #include "spikes.h"
 
+using namespace game;
 
-
-spikes::spikes()
-{
-}
-
-
-spikes::~spikes()
-{
-}

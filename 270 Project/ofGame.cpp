@@ -18,6 +18,14 @@ float GameConfig::PLAYER_INITIAL_SPEED = 500.0f;
 		player = new Player();
 
 	}
+	
+	void ofGame::update() {
+		float currentTime = ofGetElapsedTimef();
+
+		player->update(currentTime, previousTime);
+
+		previousTime = currentTime;
+	}
 
 	void ofGame::draw() {
 		float currentTime = ofGetElapsedTimef();
@@ -25,13 +33,7 @@ float GameConfig::PLAYER_INITIAL_SPEED = 500.0f;
 		player->draw(currentTime, previousTime);
 	}
 
-	void ofGame::update() {
-		float currentTime = ofGetElapsedTimef();
-		
-		player->update(currentTime, previousTime);
 
-		previousTime = currentTime;
-	}
 
 	void ofGame::keyPressed(int key) {
 		switch (key) {

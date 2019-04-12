@@ -1,5 +1,7 @@
 #include "wall.h"
 
+using namespace game;
+
 void wall::init(int x, int y, int w, int h) {
 	setColor(192, 192, 192);
 	size = 64;
@@ -17,12 +19,4 @@ void wall::draw() {
 	ofFill();
 	ofDrawRectangle(pos.x, pos.y, width, height);
 
-}
-wall::wall()
-{
-}
-
-
-wall::~wall()
-{
 }

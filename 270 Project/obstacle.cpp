@@ -1,12 +1,10 @@
 #include "obstacle.h"
 
+using namespace game;
 
-
-obstacle::obstacle()
-{
+void obstacle::setColor(int r, int g, int b) {
+	red = r;
+	green = g;
+	blue = b;
 }
 
-
-obstacle::~obstacle()
-{
-}

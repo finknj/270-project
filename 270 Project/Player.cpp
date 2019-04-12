@@ -33,7 +33,7 @@ void Player::handleMovementKeyPressed(MovementDirection direction) {
 		if (!isUpKeyPressed) {
 			startMovingUp();
 			isUpKeyPressed = true;
-			printf("up");		//registers key press and release
+		
 		}
 		break;
 	case DOWN:
@@ -116,9 +116,6 @@ void Player::handleMovementKeyReleased(MovementDirection direction) {
 void Player::startMovingUp() {
 	velocity.y = -GameConfig::PLAYER_INITIAL_SPEED;
 	acceleration.y = -GameConfig::PLAYER_INITIAL_ACCEL;
-	printf("%g ", velocity.y);			//returning -500 -1000 for values but still not moving?
-	printf("%g ", acceleration.y);
-
 }
 
 void Player::startMovingDown() {
@@ -178,21 +175,21 @@ void Player::updatePosition(float dt) {
 	
 	ofVec2f delta = velocity * dt;
 
-	if (position.x + delta.x + size >= ofGetWidth()) {
+	if (pos.x + delta.x + size >= ofGetWidth()) {
 		delta.x = 0;
 	}
-	else if (position.x + delta.x - size <= 0) {
+	else if (pos.x + delta.x - size <= 0) {
 		delta.x = 0;
 	}
 
-	if (position.y + delta.y + size >= ofGetHeight()) {
+	if (pos.y + delta.y + size >= ofGetHeight()) {
 		delta.y = 0;
 	}
-	else if (position.y + delta.y - size <= 0) {
+	else if (pos.y + delta.y - size <= 0) {
 		delta.y = 0;
 	}
 
-	position += delta;
+	pos += delta;
 }
 
 Player::Player() {
@@ -201,8 +198,8 @@ Player::Player() {
 
 Player::Player(int leftBound) {
 	init();
-	position.x = leftBound + ofRandom(ofGetWidth() - leftBound - 2 * size);
-	position.y = size + ofRandom(ofGetHeight() - 2 * size);
+	pos.x = leftBound + ofRandom(ofGetWidth() - leftBound - 2 * size);
+	pos.y = size + ofRandom(ofGetHeight() - 2 * size);
 }
 
 void Player::draw(float timeNow, float timeBefore) {
