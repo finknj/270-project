@@ -30,10 +30,18 @@ void coin::draw() {
 	ofDrawCircle(pos.x, pos.y, size);
 }
 
-void coin::pickUp() {
-	printf("gotcha");
-}
 
 coin::coin() {
 	init();
+}
+
+
+ofVec2f coin::getPosition() {
+	return pos;
+}
+
+void coin::resetCoin() {
+	pos.x = ofRandom(ofGetWidth() - 2 * size) - size;
+	pos.y = ofRandom(ofGetHeight() - 2 * size) - size;
+
 }

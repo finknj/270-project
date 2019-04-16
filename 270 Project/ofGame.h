@@ -2,6 +2,9 @@
 #include "ofMain.h"
 #include "Player.h"
 #include "coin.h"
+#include "base.h"
+#include "obstacle.h"
+
 
 namespace game{
 
@@ -21,9 +24,12 @@ public:
 
 private:
 	float previousTime;
+	
 	Player* player;
 	coin* Coin;
-	
+
+
+	void resetCoin();
 
 };
 

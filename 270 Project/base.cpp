@@ -7,9 +7,7 @@ void base::setPosition(ofVec2f position) {
 	this->pos = position;
 }
 
-ofVec2f base::getPosition() {
-	return pos;
-}
+
 
 void base::setVelocity(ofVec2f velocity) {
 	this->velocity = velocity;

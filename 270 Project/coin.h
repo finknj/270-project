@@ -11,8 +11,10 @@ namespace game {
 		void update();
 		bool checkSpace();
 		void draw();
-		void pickUp();
 
+		void resetCoin();
+
+		ofVec2f getPosition();
 		//constructor
 		coin();
 	};

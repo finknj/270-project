@@ -3,10 +3,21 @@
 
 using namespace game;
 
+
+ofVec2f Player::getPosition() {
+	return pos;
+}
+
+
+
+
+
 void Player::init() {
 	
 	setColor(0, 255, 0);
 	size = 35;
+
+	Coins_Collected = 0;
 
 	pos.x = ofRandom(ofGetWidth() - size);
 	pos.y = ofRandom(ofGetHeight() - size);
@@ -151,7 +162,7 @@ bool Player::checkSpace() {
 
 
 void Player::collectCoin() {
-
+	Coins_Collected++;
 }
 
 void Player::die() {
@@ -160,7 +171,14 @@ void Player::die() {
 
 
 void Player::update(float timeNow, float timeBefore) {
+	
+	ofVec2f temp(pos.x,pos.y);
 	updatePosition(timeNow - timeBefore);
+	//if (pos != temp)
+		//printf("\n%g %g ", pos.x, pos.y);
+	//temp = pos;
+	
+
 }
 
 void Player::updateVelocity(float dt) {

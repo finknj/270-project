@@ -11,8 +11,7 @@ namespace game {
         static float UPDATE_PERIOD;
         // How many seconds between updates of the entities in the game
         static float HORIZONTAL_BOUNDARY_RATIO;
-		// Number of Coins collected
-		static int COINS_COLLECTED;
+
         
         // PLAYER OPTIONS --------------------------------------
 

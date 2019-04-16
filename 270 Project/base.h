@@ -18,11 +18,14 @@ namespace game {
 		virtual void draw(float timeNow, float timeBefore) {};
 
 		// Getter and setters					//Getters and Setters copied and pasted in hopes it would make things work..it didnt but now im too afraid to delete them
+													//UPDATE: they turned out to be useful :)
 		void setPosition(ofVec2f position);
-		ofVec2f getPosition();
+
 		void setVelocity(ofVec2f velocity);
 		ofVec2f getVelocity();
 
+
+		int size;
 	protected:
 		ofVec2f pos;
 		ofVec2f velocity;
@@ -31,7 +34,7 @@ namespace game {
 		int green;
 		int red;
 		int blue;
-		int size;
+
 
 	};
 

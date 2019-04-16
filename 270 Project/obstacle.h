@@ -17,7 +17,7 @@ namespace game {
 		int green;
 		int red;
 		int blue;
-		int size;
+
 
 
 	public:
@@ -34,6 +34,8 @@ namespace game {
 		// Getter and setter
 		void setPosition(ofVec2f position);
 		ofVec2f getPosition();
+
+		int size;
 	};
 
 }

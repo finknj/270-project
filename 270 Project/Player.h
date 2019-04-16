@@ -13,9 +13,12 @@ namespace game {
 			RIGHT
 		};
 
+		int Coins_Collected;
+		ofVec2f getPosition();
+
+
 		//Sets initial values for player
 		void init();
-		
 		bool checkSpace();
 		void collectCoin();
 		void die();
